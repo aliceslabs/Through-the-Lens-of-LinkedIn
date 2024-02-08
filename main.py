@@ -33,3 +33,13 @@ eID = browser.find_element(By.XPATH, '//button[@aria-label="Show more people fil
 eID.click()
 eID = browser.find_element(By.NAME, "Computer Science")
 eID.click()
+# change depending on how much we must scroll
+repetitions = 50 
+last_height = browser.execute_script("return document.body.scrollHeight")
+for i in range(repetitions):
+  browser.execute_script('window.scrollTo(0, document.body.scrollHeight);')
+  time.sleep(5)
+  new_height = browser.execute_script("return document.body.scrollHeight")
+  if new_height == last_height:
+    break
+  new_height = last_height
