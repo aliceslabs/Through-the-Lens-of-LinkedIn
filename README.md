@@ -18,9 +18,9 @@ It crawls profiles of Queen's Computing alumni.
 It contains some popular names which are used by crawling.py.
 4) profiles.csv<br/>
 It stores crawled profiles.
-5) presentation.py
+5) presentation.py<br/>
 It analyzes the profiles and display the result in the webpage.
-6) templates
+6) templates<br/>
 The folder holds the templates in Flask application.
-7) static
+7) static<br/>
 The folder holds the static files in Flask application.
