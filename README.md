@@ -1,3 +1,4 @@
+# Through-the-Lens-of-LinkedIn
 1) config.txt
 It stores the username and password of LinkedIn.
 2) crawling.py
