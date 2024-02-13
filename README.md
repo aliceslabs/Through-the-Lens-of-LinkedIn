@@ -9,6 +9,7 @@ Required libraries:
 * BeautifulSoup
 * flask
 * wordcloud
+
 You can install these libraries using ` pip install pandas numpy matplotlib selenium beautifulsoup4 flask wordcloud`.
 ## Explanation of files and folder
 1) config.txt<br/>
