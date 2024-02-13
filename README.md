@@ -26,6 +26,6 @@ The folder holds the templates in Flask application.
 The folder holds the static files in Flask application.
 ## Run
 1) Crawler<br/>
-Put you LinkedIn credentials in `config.txt` and then run the crawler using `python3 crawling.py`. You need to manually complete the verification of LinkedIn if necessary.
+Put your LinkedIn credentials in `config.txt` and then run the crawler using `python3 crawling.py`. You need to manually complete the verification of LinkedIn if necessary.
 2) Website<br/>
 Run the website using `python3 presentation.py` and then visit the link [http://localhost:5050](http://localhost:5050).
