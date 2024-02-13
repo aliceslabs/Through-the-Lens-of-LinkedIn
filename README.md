@@ -6,4 +6,4 @@ It crawls profiles of Queen's Computing alumni.
 5) names.txt<br/>
 It contains some popular names which are used by crawling.py.
 6) profiles.csv<br/>
-It stored crawled profiles.
+It stores crawled profiles.
