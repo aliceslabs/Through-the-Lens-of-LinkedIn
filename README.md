@@ -9,7 +9,7 @@ Required libraries:
 * BeautifulSoup
 * flask
 * wordcloud
-## Explantion of files and folder
+## Explanation of files and folder
 1) config.txt<br/>
 It stores the username and password of LinkedIn.
 2) crawling.py<br/>
