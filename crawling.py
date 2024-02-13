@@ -280,6 +280,7 @@ def crawl_user_files():
 
 
 # login
+print('Please manually complete the verification if necessary.')
 login()
 time.sleep(40)
 
