@@ -15,7 +15,7 @@ if not os.path.exists(OUTPUT_CSV_FILENAME):
     open(OUTPUT_CSV_FILENAME, 'w').close()
 if os.stat(OUTPUT_CSV_FILENAME).st_size == 0:
     # write the file header
-    with open(OUTPUT_CSV_FILENAME, 'w', newline='\n') as fp:
+    with open(OUTPUT_CSV_FILENAME, 'w', newline='\n', encoding='utf-8') as fp:
         writer = csv.writer(fp)
         writer.writerow(['username', 'name', 'location', 'graduation year', 'company', 'job title', 'skills'])
 
@@ -196,7 +196,7 @@ def extract_skills(html_src):
 # write one profile to the csv file
 def write_one_profile(profile):
     global existing_usernames
-    with open(OUTPUT_CSV_FILENAME, 'a', newline='\n') as fp:
+    with open(OUTPUT_CSV_FILENAME, 'a', newline='\n', encoding='utf-8') as fp:
         writer = csv.writer(fp)
         writer.writerow(profile)
 
@@ -216,7 +216,7 @@ def extract_profile(username):
 
     # get the name and location
     browser.get(profile_link)
-    time.sleep(1)
+    time.sleep(random.randint(2, 5))
     items = extract_name_location(browser.page_source)
     if items is None:
         return
@@ -224,7 +224,7 @@ def extract_profile(username):
 
     # get graduation year if the person is a Queen’s Computing Alumni
     browser.get(education_link)
-    time.sleep(1)
+    time.sleep(random.randint(2, 5))
     graduation_year = extract_graduation_year(browser.page_source)
     if graduation_year is None:
         return
@@ -233,7 +233,7 @@ def extract_profile(username):
 
     # get the company and job title
     browser.get(experience_link)
-    time.sleep(1)
+    time.sleep(random.randint(2, 5))
     items = extract_company_job_title(browser.page_source)
     if items is None:
         company, job_title = '', ''
@@ -242,7 +242,7 @@ def extract_profile(username):
 
     # get the skills
     browser.get(skills_link)
-    time.sleep(1)
+    time.sleep(random.randint(2, 5))
     skills = extract_skills(browser.page_source)
 
     # write one profile to the csv file
@@ -262,7 +262,7 @@ def crawl_user_files():
                           '%20computer%20science&network=%5B%22O%22%5D&origin=FACETED_SEARCH&profileLanguage=%5B%22en%22%5D&schoolFilter=%5B%226926%22%5D&page=' + \
                           str(page)
             browser.get(search_link)
-            time.sleep(random.randint(2, 3))
+            time.sleep(random.randint(2, 4))
 
             # extract usernames
             usernames = extract_usernames(browser.page_source)
@@ -273,13 +273,15 @@ def crawl_user_files():
                 # extract profile information
                 extract_profile(username)
 
-        time.sleep(random.randint(1, 2))
+            time.sleep(random.randint(3, 5))
+
         print()
+        time.sleep(random.randint(6, 10))
 
 
 # login
 login()
-time.sleep(30)
+time.sleep(40)
 
 # crawl the user files
 crawl_user_files()
