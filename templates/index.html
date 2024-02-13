@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentation</title>
+    <style>
+        header{
+            text-align: center;
+        }
+        main{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .section1{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .section1 .item{
+            width: 350px;
+            margin-top: 10px; 
+        }
+        .section1 .item .item-title{
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        img {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .section2{
+            height: 300px;
+            background-color: rgba(230, 230, 230, 0.5);
+            padding-top: 10px;
+        }
+        .section2 li{
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Queen's Computing alumni</h1>
+    </header>
+    <main>
+        <h2>Section I - Visualization</h2>
+        <div class="section1">
+            <div class="item">
+                <div class="item-title">1. Locations of Alumni</div>
+                <div class="item-image"><img src="{{url_for('static', filename='images/locations.png')}}"></div>
+            </div>
+            <div class="item">
+                <div class="item-title">2. Current job status</div>
+                <div class="item-image"><img src="{{url_for('static', filename='images/jobs.png')}}"></div>
+            </div>
+            <div class="item">
+                <div class="item-title">3. Job title</div>
+                <div class="item-image"><img src="{{url_for('static', filename='images/job_title.png')}}"></div>
+            </div>
+            <div class="item">
+                <div class="item-title">4. Skills</div>
+                <div class="item-image"><img src="{{url_for('static', filename='images/skills.png')}}"></div>
+            </div>
+        </div>
+        <h2>Section II - Conclusion</h2>
+        <div class="section2">
+            <ol>
+                <li>The vast majority of alumni are employed domestically, with only a small portion going abroad for development.</li>
+                <li>The vast majority of alumni currently have jobs, with only a portion not. Perhaps some people have not updated their job status on LinkedIn.</li>
+                <li>Software engineer is a popular job title among alumni. Some alumni are already senior software engineers.In addition, some alumni are engaged in AI, some are scientists, and some have become leaders.This can serve as a career guide for undergraduate students in the future.Schools can enable undergraduate students to have more choices and plan their future paths.</li>
+                <li>Microsoft's office softwares are necessary skills, and students should be proficient in mastering these skills. Java and C are common languages, and students also need to be familiar with the use of Linux. In addition to professional skills, schools need to cultivate students' teamwork, analytical skills, and leadership abilities.</li>
+            </ol>
+        </div>
+    </main>
+</body>
+</html>
